@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=yes">
+
+  <title>Map</title>
+
+  <!-- jQuery-->  
+  <script src="js/lib/jquery.min.js"></script>
+
+  <!-- Leaflet (CSS and JS) -->
+  <link rel="stylesheet" href="css/leaflet.css">
+  <script src="js/lib/leaflet.js"></script>
+
+  <!-- leaflet-providers -->
+  <script src="js/lib/leaflet-providers.js"></script>
+
+  <!-- Tabletop -->
+  <script src="js/lib/tabletop.js"></script>
+    
+  <!-- autocomplete-->
+  <link rel="stylesheet" type="text/css" href="css/magicsuggest-min.css">
+  <script type="text/javascript" src="js/lib/magicsuggest.js"></script>
+  
+  
+  <!--Plugin CSS file with desired skin-->
+    <link rel="stylesheet" href="css/ion.rangeSlider.css"/>      
+    <!--Plugin JavaScript file-->
+    <script src="js/ion.rangeSlider.min.js"></script>
+    
+
+  <!-- Leaflet.awesome-markers -->
+  <link rel="stylesheet" type="text/css" href="css/leaflet.awesome-markers.css">
+  <script type="text/javascript" src="js/lib/leaflet.awesome-markers.js"></script>
+
+  <!-- Markercluster -->
+  <link rel="stylesheet" href="css/MarkerCluster.css">
+  <link rel="stylesheet" href="css/MarkerCluster.Default.css">
+  <script type="text/javascript" src="js/lib/leaflet.markercluster.js"></script>
+  
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Locate Control -->
+  <link rel="stylesheet" href="css/L.Control.Locate.min.css">
+  <script src="js/lib/L.Control.Locate.min.js"></script>
+
+  <!-- jQuery-CSV -->
+  <script src="js/lib/jquery.csv-0.71.min.js"></script>
+
+  <!-- Custom style sheet -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  <!-- Layer Support for Marker Cluster -->
+  <script src="js/lib/leaflet.markercluster.layersupport.js"></script>
+  
+  
+  
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+</head>
+
+<body>
+
+  <div class="loader" style="">
+	<h1>Loading</h1>
+  </div>
+  
+  <div class="search_container">
+	<input style="width:300px;" type="text" id="ms_search_layer">
+  </div>
+  
+  <div id="map"> </div>
+  <div class="filter">
+	<h4 class="layer_container_title">Layer</h4> 
+	<div class="filter_container">  
+		<div class='group_cont'>		
+			<div class='group_title'>
+				<label class="container">Cars
+					<input type="checkbox" id="cb_Cars"  name="cb_Cars" checked value="Cars" />
+					<span class="checkmark"></span>
+				</label>
+			
+			</div>
+			<div class='group_elem'>
+				<label class="container">Cheap Car
+					<input type="checkbox"  name="rad_Cars" checked value="1" />
+					<span class="checkmark"></span>
+				</label>
+				<label class="container">Everyday
+					<input type="checkbox"  name="rad_Cars" checked value="2" />
+					<span class="checkmark"></span>
+				</label>
+				<label class="container"> 7 seater/ AUTO
+					<input type="checkbox"  name="rad_Cars" checked value="3" />
+					<span class="checkmark"></span>
+				</label><label class="container">Premium
+					<input type="checkbox"  name="rad_Cars" checked value="4" />
+					<span class="checkmark"></span>
+				</label>				
+			</div>
+		</div>
+		 
+		<div class='group_cont'>								
+			<div class='group_title'>
+				<label class="container">Hirers
+				  <input type="checkbox" id="cb_Hirers" name="cb_Hirers" checked  value="Hirers" />
+				  <span class="checkmark"></span>
+				</label>
+			</div>
+			
+			<div class='group_elem'>
+				 
+				<input type="text" class="js-range-slider" name="my_range" value="" />
+
+
+			</div>			
+			<button id='btnFilterHirers' class='button'>Filter</button>
+			<br>
+			<br>
+		</div>			 
+	</div>
+	
+	<p class="msg_no_records">No records found!</p>
+	
+	<br>
+	<button id='clearFilter' class='button'>Reset</button>
+	   
+  </div>
+
+  <script type="text/javascript">
+    var map = L.map('map', {
+	      zoomControl: false,
+
+      attributionControl: false,      
+    }).setView([41.76,-72.69], 11); // default center is overridden by Google Sheet options and points
+	
+  </script>
+<!--<footer>
+	<p>Developed by: <a target="_blank" href="https://farazahmed95.github.io/site/">Faraz Ahmed</a> </p>
+</footer>-->
+    
+  <script type="text/javascript" src="js/google-doc-url.js"></script>
+  <script type="text/javascript" src="js/constants.js"></script>
+  <script type="text/javascript" src="js/procsv.js"></script>
+  <script type="text/javascript" src="js/utils.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>
